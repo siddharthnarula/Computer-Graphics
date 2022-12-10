@@ -74,3 +74,32 @@ Input: "Chi"
 Output: ["Chick-fil-A", "Chipotle", "Chinese Street Food"]
 
 
+## 2.1 Find the place's coordinates in the Map
+```cpp
+std::pair<double, double> GetPosition(std::string name);
+```
+In this function, we check through the data vector and find out the exact matching name; if we find a match, longitude and latitude values are displayed as output. If the entered name does not match, then it suggests a list of locations, and outputs the values of longitude and latitude of the chosen location. If in case an empty string is entered the function returns -1 for both longitude and latitude.
+
+### Time complexity is O(n)
+ 
+Example:
+Input: "Target"
+Output: (34.0257016, -118.2843512) 
+
+
+## 2.2. Check Edit Distance Between Two Location Names
+```cpp
+int CalculateEditDistance(std::string name1, std::string name2);
+```
+Here in CalculateEditDistance, we use distance algorithm to calculate the distance between two strings. We use 2D vector for tabulization and dynamic programming. Condition in this is that if any string is an empty string, then the other string is returned as output. Using a loop, we compare both strings, if the characters are different then we take a minimum of three operations: insert, delete or replace a character.
+If the entered string does not match with the data vector then using FindClosetName function, we see a Did you mean suggestion with most closest option.
+
+### Time complexity is O(n)
+
+Example:
+Input: "Rolphs", "Ralphs"
+Output: 1
+
+## 3. Get All Categories
+
+
