@@ -62,3 +62,15 @@ Here is the image for Dynamic UI
 <p align="center"><img src="Photos/Screenshot 2022-12-09 at 7.10.05 PM.png" width="500" /></p>
 
 ## 1. Autocomplete The Location Name
+```cpp
+std::vector<std::string> Autocomplete(std::string name);
+```
+Here, the input is entered as a string and is transformed into lower case letters to avoid case sensitivity. After this, an autocomplete suggestion using entered input as prefix is displayed on the screen. If input is an empty string, an empty string is returned as output. 
+### The runtime of the function: O(n)
+
+Example:
+
+Input: "Chi"
+Output: ["Chick-fil-A", "Chipotle", "Chinese Street Food"]
+
+
