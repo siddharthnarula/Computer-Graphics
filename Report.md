@@ -74,6 +74,7 @@ Input: "Chi"
 
 Output: ["Chick-fil-A", "Chipotle", "Chinese Street Food"]
 
+<p align="center"><img src="Photos/Final_1.png" width="500" /></p>
 
 ## 2.1 Find the place's coordinates in the Map
 ```cpp
@@ -89,13 +90,14 @@ Input: "Target"
 
 Output: (34.0257016, -118.2843512) 
 
+<p align="center"><img src="Photos/2.png" width="500" /></p>
 
+<p align="center"><img src="Photos/2_1.png" width="500" /></p>
 ## 2.2. Check Edit Distance Between Two Location Names
 ```cpp
 int CalculateEditDistance(std::string name1, std::string name2);
 ```
-Here in CalculateEditDistance, we use distance algorithm to calculate the distance between two strings. We use 2D vector for tabulization and dynamic programming. Condition in this is that if any string is an empty string, then the other string is returned as output. Using a loop, we compare both strings, if the characters are different then we take a minimum of three operations: insert, delete or replace a character.
-If the entered string does not match with the data vector then using FindClosetName function, we see a Did you mean suggestion with most closest option.
+For the given strings we create a matrix and do dynamic programming to check if the substring are same or not and if it needs any 3 operations: insert, delete or replace a character. If the entered string does not match with the data vector then using FindClosetName function, we see a Did you mean suggestion with most closest option.
 
 ### Time complexity is O(n)
 
@@ -105,18 +107,20 @@ Input: "Rolphs", "Ralphs"
 
 Output: 1
 
+<p align="center"><img src="Photos/editdist.png" width="500" /></p>
+
 ## 3. Get All Categories
 ```cpp
 std::vector<std::string> GetAllCategories();
 ```
-This function returns all the available categories of location in the map.
+For this function, we pass over the dataset and check if there is an item preset in the attributes column, if the attribute is found then return the list of all the categories.
 ### Time complexity is O(n)
 
 ## 4. Get All Locations In A Category
 ```cpp
 std::vector<std::string> GetAllLocationsFromCategory(std::string category);
 ```
-This function helps to return values as locations in an input category.
+For a given string, check if it matches the element in attribute column, if it does then return list of all the IDs.
 
 ### Time complexity is O(n)
 
@@ -130,7 +134,7 @@ Output: 9591449441, 9591449465, 5237417651.
 ```cpp
 std::vector<std::string> GetLocationRegex(std::regex location);
 ```
-Under this function, an input of regular expression for the category is entered and based on that the location ids are returned as output. This also verifies if input regular expression is correct or not. If it is verified as incorrect or if the regex is invalid, then an empty vector is returned.
+For a regular expression as an input, first check if it is a regular expression or not. Then for the entered category check if the attributes column of each row matches the regular expression if it does then add it to the list and return the final id list.
 
 ### Time complexity is O(n)
 
@@ -147,7 +151,7 @@ std::vector<std::string> CalculateShortestPath_Dijkstra(std::string &location1_n
 std::vector<std::string> CalculateShortestPath_Bellman_Ford(std::string &location1_name,
                                                std::string &location2_name);
 ```
-The main purpose of this function is to find the shortest path and distance between the two locations.
+The purpose of this function is to find the shortest path and distance between the two locations.
 
 Dijkstra: It works on a greedy approach. We firstly initialize the distance as infinity from source to each node. Then using unordered map we keep track of all the previous nodes in order to build the entire shortest path. We use a min heap to track the shortest path. Iteration is done through neighbors on top of heap and if the sum of distance of edge and node is less than neighbors we had before, we push to the heap and the same is followed till the heap is empty. This cannot handle negative cycles.
 ### Time complexity is O(Edges*log(vertices))
@@ -179,7 +183,7 @@ Bellman_Ford: We use an iterative approach and a map to save distance from sourc
 ```cpp
 bool CycleDetection(std::vector<double> &square);
 ```
-In this function, we run DFS on a graph starting from every node, and when we hit a visited node that is where we find a back edge.  A subgraph is created inside the main Trojan Map using the left, right, upper, lower coordinates.Then these are transversed while keeping a track of visited nodes. If it is revisited, cycle exists.If no, then no cycle exists.
+In this function, we run DFS on a graph starting from every node, and when we hit a visited node that is where we find a back edge. A subgraph is created inside the main Trojan Map using the left, right, upper, lower coordinates.Then these are transversed while keeping a track of visited nodes. If it is revisited, cycle exists. If no, then no cycle exists.
 
 ### Time complexity is observed to be O(N)
 
@@ -297,7 +301,7 @@ Output: Attributes - 1.Chase 2.Bank of America 3.USC Credit Union Time - 10ms
 ```cpp
 std::vector<std::string> TrojanMap::TrojanPath(std::vector<std::string> &location_names)
 ```
-It returns the shortest path to visit all the given input locations, where input locations can be entered as a csv file.
+First Initialize the solution matrix same as the input graph matrix as a first step. Then update the solution matrix by considering all vertices as an intermediate vertex. The idea is to one by one pick all vertices and updates all shortest paths which include the picked vertex as an intermediate vertex in the shortest path. When we pick vertex number k as an intermediate vertex, we already have considered vertices {0, 1, 2, .. k-1} as intermediate vertices. For every pair (i, j) of the source and destination vertices respectively, there are two possible cases. k is not an intermediate vertex in shortest path from i to j. We keep the value of dist[i][j] as it is. k is an intermediate vertex in shortest path from i to j. We update the value of dist[i][j] as dist[i][k] + dist[k][j] if dist[i][j] > dist[i][k] + dist[k][j]
 
 ### Time complexity is O(Nodes^2)
 
