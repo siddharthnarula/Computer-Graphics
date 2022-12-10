@@ -247,6 +247,8 @@ Take 2 edges from the route, reconnect these edges with each other and calculate
 Take 3 edges from the route, reconnect these edges with each other and calculate new travel distance. If this modification has led to a shorter total travel distance the current route is updated. The algorithm continues to build on the improved route and repeats the steps. This process is repeated until no more improvements are found or until pre-specified number of iterations is complete. 3-opt analysis involves deleting 3 connections (or edges) in a network (or tour), to create 3 sub-tours. Then the 7 different ways of reconnecting the network are analysed to find the optimum one. This process is then repeated for a different set of 3 connections, until all possible combinations have been tried in a network.
 
   ### Time Complexity: O(N^3)
+  
+  
 
 ## 10. Find Nearby 
 
@@ -257,10 +259,18 @@ It returns k locations that are part of the input category within the radius of 
 
 ### Time complexity is O(Nodes^2)
 
-Example:
+Example: 
 
-Input:
+Input: Attribute - bank Locations- Ralphs Radius - 6 Number k - 4
+Output: Attributes - 1.Chase 2.Bank of America 3.USC Credit Union Time - 10ms
 
+| Input Data | Output Data | Runtime |
+| ----------------------|:------------------:|-----------------------:|
+| attribute:bank locations:Ralphs radius r:6 number k:4 | 1.Chase 2.Bank of America 3.USC Credit Union | 10ms |
+| attribute:library locations:Village Cobbler radius r:5 number k:6 | 1.Leavey Library 2.Junipero Serra Branch Los Angeles Public Library 3.Junipero Serra Library 4.Jefferson Branch Los Angeles Public Library 5.Vernon Branch Los Angeles Public Library | 9ms |
+| attribute:bank locations:Ralphs radius r:6 number k:4 | 1.USC Credit Union 2.Bank of America 3.Chase | 7 ms |
+| attribute:bank locations:Chase radius r:5 number k:3 | 1.Bank of America 2.USC Credit Union | 7 ms |
+| attribute:library locations:Ralphs input radius r:2 number k:10 | 1.Leavey Library 2.Jefferson Branch Los Angeles Public Library 3.Junipero Serra Branch Los Angeles Public Library | 7 ms |
 
 
 ## 11. Find the Shortest Path to Visit All locations
@@ -275,6 +285,12 @@ It returns the shortest path to visit all the given input locations, where input
 Example:
 
 Input:
+Jefferson Park, Chase, Crosswalk
+
+Output:
+The distance of the path is:2.87257 miles
+Time taken by function: 665 ms
+
 
 
 
