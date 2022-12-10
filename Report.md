@@ -71,6 +71,7 @@ Here, the input is entered as a string and is transformed into lower case letter
 Example:
 
 Input: "Chi"
+
 Output: ["Chick-fil-A", "Chipotle", "Chinese Street Food"]
 
 
@@ -83,7 +84,9 @@ In this function, we check through the data vector and find out the exact matchi
 ### Time complexity is O(n)
  
 Example:
+
 Input: "Target"
+
 Output: (34.0257016, -118.2843512) 
 
 
@@ -97,7 +100,9 @@ If the entered string does not match with the data vector then using FindClosetN
 ### Time complexity is O(n)
 
 Example:
+
 Input: "Rolphs", "Ralphs"
+
 Output: 1
 
 ## 3. Get All Categories
@@ -116,7 +121,9 @@ This function helps to return values as locations in an input category.
 ### Time complexity is O(n)
 
 Example:
+
 Input: bank
+
 Output: 9591449441, 9591449465, 5237417651.
 
 ## 5. Get Locations Using A Regular Expression
@@ -128,7 +135,9 @@ Under this function, an input of regular expression for the category is entered 
 ### Time complexity is O(n)
 
 Example:
+
 Input: 37th.*
+
 Output: 1614922613, 5555212953, 6206425701, 9587039891, 9587039892, 9587039893.
 
 ## 6. CalculateShortestPath between two places
@@ -146,9 +155,6 @@ Dijkstra: It works on a greedy approach. We firstly initialize the distance as i
 Bellman_Ford: We use an iterative approach and a map to save distance from source to node. We initialize the distance to infinity from source to every node. We use an extra intermediate edge every time and update distance with shortest distance. This can handle negative cycles.
 ### Time complexity is O(Edges*Vertices)
 
-Example:
-Input: 37th.*
-Output: 1614922613, 5555212953, 6206425701, 9587039891, 9587039892, 9587039893.
 
 
 | Source to Destination | Dijkstra Algorithm | Bellman Ford Algorithm |
