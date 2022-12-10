@@ -164,6 +164,16 @@ Bellman_Ford: We use an iterative approach and a map to save distance from sourc
 | Lululemon to USC Roski Eye Institute | 78ms | 14372ms |
 | Olive & 12th to Insomnia Cookies | 215ms | 19590ms |
 | Village Cobbler to Credit Union | 74ms | 14869ms |
+| Chipotle to Chase | 80ms | 13654 ms |
+| Lululemon to Insomnia Cookie | 4 ms | 195 ms |
+| Ralphs to KFC | 148 ms | 15200 ms |
+| Ralphs to Target | 110 ms | 15176 ms |
+| Target to Chase | 91 ms | 14296 ms |
+| Target to Chipotle | 112 ms | 14148 ms |
+| Crosswalk to Ralphs | 81 ms | 14180 ms |
+| Crosswalk to Target | 81 ms | 13654 ms |
+| Crosswalk to Chase | 116 ms | 13640 ms |
+| Crosswalk to Chipotle | 147 ms | 15321 ms |
 
 ## 7. Cycle Detection
 ```cpp
@@ -191,6 +201,40 @@ Output: false
 ```cpp
 std::vector<std::string> DeliveringTrojan(std::vector<std::string> &location_names,std::vector<std::vector<std::string>> &dependencies);
 ```
+The main purpose is to return the best route to be taken when we have inputs and dependencies. Here we use an adjacency list with the dependencies to get a path. We run DFS here.
+### Time complexity is O(Nodes+Edges)
+
+Example:
+
+Input:
+location_names = {"Ralphs", "Chick-fil-A", "KFC"}. dependencies = {{"Ralphs","KFC"}, {"Ralphs","Chick-fil-A"}, {"Chick-fil-A", "KFC"}}
+
+Output: Ralphs->Chick-fil-A->KFC
+
+## 9. The Traveling Trojan Problem (AKA Traveling Salesman!)
+
+The main purpose of this is to return the shortest path between N locations when each location is visited only once.
+
+- Brute Force Algorithm:
+  Consider a start node as 1st location, Generate all (n-1)! paths permutations of the locations and calculate the cost of every permutation, keep track of minimum cost for the path. Return the path with minimum cost.
+
+### Time Complexity: O(N!)
+
+- BackTracking Algorithm: 
+Consider node 0 as the starting and ending point. Start traversing from the source to its adjacent nodes in DFS manner and calculate the cost of every step and minimum cost as well. Return the permutation with minimum cost.
+
+### Time Complexity: O(N!)
+
+- 2-opt Algorithm:
+
+Take 2 edges from the route, reconnect these edges with each other and calculate new travel distance. If this modification has led to a shorter total travel distance the current, route is updated. The algorithm continues to build on the improved route and repeats the steps. This process is repeated until no more improvements are found or until a pre-specified number of iterations is completed.
+
+### Time Complexity: O(N^2)
+
+- 3-opt Algorithm:
+Take 3 edges from the route, reconnect these edges with each other and calculate new travel distance. If this modification has led to a shorter total travel distance the current route is updated. The algorithm continues to build on the improved route and repeats the steps. This process is repeated until no more improvements are found or until pre-specified number of iterations is complete. 3-opt analysis involves deleting 3 connections (or edges) in a network (or tour), to create 3 sub-tours. Then the 7 different ways of reconnecting the network are analysed to find the optimum one. This process is then repeated for a different set of 3 connections, until all possible combinations have been tried in a network.
+
+### Time Complexity: O(N^3)
 
 
 
