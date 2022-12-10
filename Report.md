@@ -77,6 +77,7 @@ Output: ["Chick-fil-A", "Chipotle", "Chinese Street Food"]
 <p align="center"><img src="Photos/Final_1.png" width="500" /></p>
 
 ## 2.1 Find the place's coordinates in the Map
+
 ```cpp
 std::pair<double, double> GetPosition(std::string name);
 ```
@@ -93,7 +94,9 @@ Output: (34.0257016, -118.2843512)
 <p align="center"><img src="Photos/2.png" width="500" /></p>
 
 <p align="center"><img src="Photos/2_1.png" width="500" /></p>
+
 ## 2.2. Check Edit Distance Between Two Location Names
+
 ```cpp
 int CalculateEditDistance(std::string name1, std::string name2);
 ```
@@ -122,7 +125,7 @@ For this function, we pass over the dataset and check if there is an item preset
 ```cpp
 std::vector<std::string> GetAllLocationsFromCategory(std::string category);
 ```
-For a given string, check if it matches the element in attribute column, if it does then return list of all the IDs.
+For a given input category, check if it matches the element in attribute column, if it does then return list of all the locations that are part of the input category.
 
 ### Time complexity is O(n)
 
@@ -191,6 +194,7 @@ Bellman_Ford: We use an iterative approach and a map to save distance from sourc
 <p align="center"><img src="Photos/6_1.png" width="500" /></p>
 
 ## 7. Cycle Detection
+
 ```cpp
 bool CycleDetection(std::vector<double> &square);
 ```
@@ -220,10 +224,11 @@ Output: false
 | -118.296, -118.286, 34.036, 34.012 | Yes | 2 ms |
 | -118.296, -118.286, 34.036, 34.011 | Yes | 2 ms |
 
-<p align="center"><img src="Photos/7_1png" width="500" /></p>
+<p align="center"><img src="Photos/7_1.png" width="500" /></p>
 <p align="center"><img src="Photos/7_11.png" width="500" /></p>
 <p align="center"><img src="Photos/7_2.png" width="500" /></p>
 <p align="center"><img src="Photos/7_22.png" width="500" /></p>
+
 ## 8. Topological Sort
 
 ```cpp
@@ -369,6 +374,9 @@ We learnt
 
 - Git
 
+## Files Attached
+- Demo of Dynamic UI (zip file)
+- .avi files for all the algorithms of Traveling Trojan (Backtacking, Brute Force, 2-opt, 3-opt)
 
 
 
