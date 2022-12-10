@@ -65,7 +65,7 @@ Here is the image for Dynamic UI
 ```cpp
 std::vector<std::string> Autocomplete(std::string name);
 ```
-Based on a partial string, the program returns possible locations from our data.csv file, which hasve the same prefix. The partial name given can be case-insensitive.
+Based on a partial string, the program returns possible locations from our data.csv file, which have the same prefix. The partial name given can be case-insensitive.
 ### The runtime of the function: O(n)
 
 Example:
