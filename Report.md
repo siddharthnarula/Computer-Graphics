@@ -292,35 +292,15 @@ The distance of the path is:2.87257 miles
 Time taken by function: 665 ms
 | Input Locations | Path Length | Time |
 | ----------------------|:------------------:|-----------------------:|
-| Jefferson Park
-Chase
-Crosswalk | 2.87257 miles | 665 ms |
-| Jefferson Park
-Chick-fil-A
-Crosswalk | 3.21827 miles | 738 ms |
-| Ralphs
-KFC
-Target
-Chase | 1.706 miles | 814 ms |
-| Ralphs
-KFC
-Target | 1.468196 miles | 481 ms |
-| Ralphs
-Target
-Crosswalk | 0.969489 miles | 419 ms |
-| Ralphs
-KFC
-Crosswalk | 1.13875 miles | 480 ms |
-| Ralphs
-Chick-fil-A
-Crosswalk | 1.68623 miles | 654 ms |
-| KFC
-Chick-fil-A
-Crosswalk | 1.38978 miles | 614 ms |
-| Target
-Chick-fil-A
-Crosswalk | 1.21733 miles | 589 ms |
-
+| Jefferson Park Chase Crosswalk | 2.87257 miles | 665 ms |
+| Jefferson Park Chick-fil-A Crosswalk | 3.21827 miles | 738 ms |
+| Ralphs KFC Target Chase | 1.706 miles | 814 ms |
+| Ralphs KFC Target | 1.468196 miles | 481 ms |
+| Ralphs Target Crosswalk | 0.969489 miles | 419 ms |
+| Ralphs KFC Crosswalk | 1.13875 miles | 480 ms |
+| Ralphs Chick-fil-A Crosswalk | 1.68623 miles | 654 ms |
+| KFC Chick-fil-A Crosswalk | 1.38978 miles | 614 ms |
+| Target Chick-fil-A Crosswalk | 1.21733 miles | 589 ms |
 
 
 
