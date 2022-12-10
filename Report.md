@@ -101,5 +101,63 @@ Input: "Rolphs", "Ralphs"
 Output: 1
 
 ## 3. Get All Categories
+```cpp
+std::vector<std::string> GetAllCategories();
+```
+This function returns all the available categories of location in the map.
+### Time complexity is O(n)
+
+## 4. Get All Locations In A Category
+```cpp
+std::vector<std::string> GetAllLocationsFromCategory(std::string category);
+```
+This function helps to return values as locations in an input category.
+
+### Time complexity is O(n)
+
+Example:
+Input: bank
+Output: 9591449441, 9591449465, 5237417651.
+
+## 5. Get Locations Using A Regular Expression
+```cpp
+std::vector<std::string> GetLocationRegex(std::regex location);
+```
+Under this function, an input of regular expression for the category is entered and based on that the location ids are returned as output. This also verifies if input regular expression is correct or not. If it is verified as incorrect or if the regex is invalid, then an empty vector is returned.
+
+### Time complexity is O(n)
+
+Example:
+Input: 37th.*
+Output: 1614922613, 5555212953, 6206425701, 9587039891, 9587039892, 9587039893.
+
+## 6. CalculateShortestPath between two places
+```cpp
+std::vector<std::string> CalculateShortestPath_Dijkstra(std::string &location1_name,
+                                               std::string &location2_name);
+std::vector<std::string> CalculateShortestPath_Bellman_Ford(std::string &location1_name,
+                                               std::string &location2_name);
+```
+The main purpose of this function is to find the shortest path and distance between the two locations.
+
+Dijkstra: It works on a greedy approach. We firstly initialize the distance as infinity from source to each node. Then using unordered map we keep track of all the previous nodes in order to build the entire shortest path. We use a min heap to track the shortest path. Iteration is done through neighbors on top of heap and if the sum of distance of edge and node is less than neighbors we had before, we push to the heap and the same is followed till the heap is empty. This cannot handle negative cycles.
+### Time complexity is O(Edges*log(vertices))
+
+Bellman_Ford: We use an iterative approach and a map to save distance from source to node. We initialize the distance to infinity from source to every node. We use an extra intermediate edge every time and update distance with shortest distance. This can handle negative cycles.
+### Time complexity is O(Edges*Vertices)
+
+Example:
+Input: 37th.*
+Output: 1614922613, 5555212953, 6206425701, 9587039891, 9587039892, 9587039893.
+
+
+| Source to Destination | Dijkstra Algorithm | Bellman Ford Algorithm |
+| ----------------------|:------------------:|-----------------------:|
+| Chipotle to Parking Center| 97ms | 14358ms |
+
+
+
+
+
 
 
