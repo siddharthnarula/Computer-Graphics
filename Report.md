@@ -247,13 +247,16 @@ The main purpose of this is to return the shortest path between N locations when
   Take 3 edges from the route, reconnect these edges with each other and calculate new travel distance. If this modification has led to a shorter total travel distance the current route is updated. The algorithm continues to build on the improved route and repeats the steps. This process is repeated until no more improvements are found or until pre-specified number of iterations is complete. 3-opt analysis involves deleting 3 connections (or edges) in a network (or tour), to create 3 sub-tours. Then the 7 different ways of reconnecting the network are analysed to find the optimum one. This process is then repeated for a different set of 3 connections, until all possible combinations have been tried in a network.
 
   ### Time Complexity: O(N^3)
- | Number of Nodes | Brute Force Runtime | Backtracking Runtime | 2-opt Runtime |  | 3-opt Runtime |
+  
+  
+| Number of Nodes | Brute Force Runtime | Backtracking Runtime | 2-opt Runtime | 3-opt Runtime |
 | ----------------------|:------------------:|:-----------------------:|:-----------------------:|-----------------------:|
 | 5 | 0 ms | 0 ms | 0ms | 151 ms |
 | 6 | 1 ms | 2 ms | 0 ms | 690 ms |
 | 7 | 17 ms | 12 ms | 0 ms | 1183 ms |
 | 8 | 96 ms | 52 ms | 1 ms | 2050 ms |
 | 9 | 857 ms | 906 ms | 2 ms | 3124 ms |
+
 
   
 
