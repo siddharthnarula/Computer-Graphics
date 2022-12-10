@@ -116,6 +116,8 @@ std::vector<std::string> GetAllCategories();
 For this function, we pass over the dataset and check if there is an item preset in the attributes column, if the attribute is found then return the list of all the categories.
 ### Time complexity is O(n)
 
+<p align="center"><img src="Photos/3.png" width="500" /></p>
+
 ## 4. Get All Locations In A Category
 ```cpp
 std::vector<std::string> GetAllLocationsFromCategory(std::string category);
@@ -130,6 +132,9 @@ Input: bank
 
 Output: 9591449441, 9591449465, 5237417651.
 
+<p align="center"><img src="Photos/4.png" width="500" /></p>
+<p align="center"><img src="Photos/4_1.png" width="500" /></p>
+
 ## 5. Get Locations Using A Regular Expression
 ```cpp
 std::vector<std::string> GetLocationRegex(std::regex location);
@@ -143,6 +148,9 @@ Example:
 Input: 37th.*
 
 Output: 1614922613, 5555212953, 6206425701, 9587039891, 9587039892, 9587039893.
+
+<p align="center"><img src="Photos/5.png" width="500" /></p>
+<p align="center"><img src="Photos/5_1.png" width="500" /></p>
 
 ## 6. CalculateShortestPath between two places
 ```cpp
@@ -179,6 +187,9 @@ Bellman_Ford: We use an iterative approach and a map to save distance from sourc
 | Crosswalk to Chase | 116 ms | 13640 ms |
 | Crosswalk to Chipotle | 147 ms | 15321 ms |
 
+<p align="center"><img src="Photos/6.png" width="500" /></p>
+<p align="center"><img src="Photos/6_1.png" width="500" /></p>
+
 ## 7. Cycle Detection
 ```cpp
 bool CycleDetection(std::vector<double> &square);
@@ -209,6 +220,10 @@ Output: false
 | -118.296, -118.286, 34.036, 34.012 | Yes | 2 ms |
 | -118.296, -118.286, 34.036, 34.011 | Yes | 2 ms |
 
+<p align="center"><img src="Photos/7_1png" width="500" /></p>
+<p align="center"><img src="Photos/7_11.png" width="500" /></p>
+<p align="center"><img src="Photos/7_2.png" width="500" /></p>
+<p align="center"><img src="Photos/7_22.png" width="500" /></p>
 ## 8. Topological Sort
 
 ```cpp
@@ -235,6 +250,8 @@ Output: Ralphs->Chick-fil-A->KFC
 | Ralphs Target Chase Chick-fil-A | Chick-fil-A Ralphs  Target Chase Target |
 | Ralphs Target Chase Crosswalk | Crosswalk Target Chase Target |
 
+<p align="center"><img src="Photos/8.png" width="500" /></p>
+<p align="center"><img src="Photos/8_1.png" width="500" /></p>
 
 ## 9. The Traveling Trojan Problem (AKA Traveling Salesman!)
 
@@ -270,7 +287,7 @@ The main purpose of this is to return the shortest path between N locations when
 | 8 | 96 ms | 52 ms | 1 ms | 2050 ms |
 | 9 | 857 ms | 906 ms | 2 ms | 3124 ms |
 
-
+<p align="center"><img src="Photos/9.png" width="500" /></p>
   
 
 ## 10. Find Nearby 
@@ -295,6 +312,8 @@ Output: Attributes - 1.Chase 2.Bank of America 3.USC Credit Union Time - 10ms
 | attribute:bank locations:Chase radius r:5 number k:3 | 1.Bank of America 2.USC Credit Union | 7 ms |
 | attribute:library locations:Ralphs input radius r:2 number k:10 | 1.Leavey Library 2.Jefferson Branch Los Angeles Public Library 3.Junipero Serra Branch Los Angeles Public Library | 7 ms |
 
+<p align="center"><img src="Photos/10.png" width="500" /></p>
+<p align="center"><img src="Photos/10_1.png" width="500" /></p>
 
 ## 11. Find the Shortest Path to Visit All locations
 
@@ -325,10 +344,30 @@ Time taken by function: 665 ms
 | KFC Chick-fil-A Crosswalk | 1.38978 miles | 614 ms |
 | Target Chick-fil-A Crosswalk | 1.21733 miles | 589 ms |
 
+<p align="center"><img src="Photos/11.png" width="500" /></p>
 
 
+## Conclusions and Lessons Learnt
 
+We learnt 
+- Data Structures
+  - Graphs
+  - Priority Queues
+  - Maps
+  - Hash Tables 
+- Algorithms 
+  - DFS
+  - Dijkstra
+  - Bellman Ford
+  - Backtracking
+  - 2opt
+  - 3opt
 
+- Dynamic Programming
+
+- Analyse Time Complexities
+
+- Git
 
 
 
