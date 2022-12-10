@@ -160,6 +160,42 @@ Bellman_Ford: We use an iterative approach and a map to save distance from sourc
 | Source to Destination | Dijkstra Algorithm | Bellman Ford Algorithm |
 | ----------------------|:------------------:|-----------------------:|
 | Chipotle to Parking Center| 97ms | 14358ms |
+| Chase to City Tacos | 86ms | 16086ms |
+| Lululemon to USC Roski Eye Institute | 78ms | 14372ms |
+| Olive & 12th to Insomnia Cookies | 215ms | 19590ms |
+| Village Cobbler to Credit Union | 74ms | 14869ms |
+
+## 7. Cycle Detection
+```cpp
+bool CycleDetection(std::vector<double> &square);
+```
+In this function, we run DFS on a graph starting from every node, and when we hit a visited node that is where we find a back edge.  A subgraph is created inside the main Trojan Map using the left, right, upper, lower coordinates.Then these are transversed while keeping a track of visited nodes. If it is revisited, cycle exists.If no, then no cycle exists.
+
+### Time complexity is observed to be O(N)
+
+Example 1:
+
+Input: square = {-118.299, -118.264, 34.032, 34.011}
+
+Output: true
+
+Example 2:
+
+Input: square = {-118.290, -118.289, 34.030, 34.020}
+
+Output: false
+
+
+## 8. Topological Sort
+
+```cpp
+std::vector<std::string> DeliveringTrojan(std::vector<std::string> &location_names,std::vector<std::vector<std::string>> &dependencies);
+```
+
+
+
+
+
 
 
 
