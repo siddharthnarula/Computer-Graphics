@@ -65,7 +65,7 @@ Here is the image for Dynamic UI
 ```cpp
 std::vector<std::string> Autocomplete(std::string name);
 ```
-Here, the input is entered as a string and is transformed into lower case letters to avoid case sensitivity. After this, an autocomplete suggestion using entered input as prefix is displayed on the screen. If input is an empty string, an empty string is returned as output. 
+Based on a partial string, the program returns possible locations from our data.csv file, which hasve the same prefix. The partial name given can be case-insensitive.
 ### The runtime of the function: O(n)
 
 Example:
@@ -79,7 +79,7 @@ Output: ["Chick-fil-A", "Chipotle", "Chinese Street Food"]
 ```cpp
 std::pair<double, double> GetPosition(std::string name);
 ```
-In this function, we check through the data vector and find out the exact matching name; if we find a match, longitude and latitude values are displayed as output. If the entered name does not match, then it suggests a list of locations, and outputs the values of longitude and latitude of the chosen location. If in case an empty string is entered the function returns -1 for both longitude and latitude.
+For the given input string we find out the exact matching name, in our data.csv file if a match is found, longitude and latitude values are displayed. If the entered name does not match, then it matches to the nearest prefix using edit distance function.
 
 ### Time complexity is O(n)
  
@@ -233,21 +233,28 @@ The main purpose of this is to return the shortest path between N locations when
   ### Time Complexity: O(N!)
 
 - ## BackTracking Algorithm: 
-Consider node 0 as the starting and ending point. Start traversing from the source to its adjacent nodes in DFS manner and calculate the cost of every step and minimum cost as well. Return the permutation with minimum cost.
+  Consider node 0 as the starting and ending point. Start traversing from the source to its adjacent nodes in DFS manner and calculate the cost of every step and minimum cost as well. Return the permutation with minimum cost.
 
   ### Time Complexity: O(N!)
 
 - ## 2-opt Algorithm:
 
-Take 2 edges from the route, reconnect these edges with each other and calculate new travel distance. If this modification has led to a shorter total travel distance the current, route is updated. The algorithm continues to build on the improved route and repeats the steps. This process is repeated until no more improvements are found or until a pre-specified number of iterations is completed.
+  Take 2 edges from the route, reconnect these edges with each other and calculate new travel distance. If this modification has led to a shorter total travel distance the current, route is updated. The algorithm continues to build on the improved route and repeats the steps. This process is repeated until no more improvements are found or until a pre-specified number of iterations is completed.
 
   ### Time Complexity: O(N^2)
 
 - ## 3-opt Algorithm:
-Take 3 edges from the route, reconnect these edges with each other and calculate new travel distance. If this modification has led to a shorter total travel distance the current route is updated. The algorithm continues to build on the improved route and repeats the steps. This process is repeated until no more improvements are found or until pre-specified number of iterations is complete. 3-opt analysis involves deleting 3 connections (or edges) in a network (or tour), to create 3 sub-tours. Then the 7 different ways of reconnecting the network are analysed to find the optimum one. This process is then repeated for a different set of 3 connections, until all possible combinations have been tried in a network.
+  Take 3 edges from the route, reconnect these edges with each other and calculate new travel distance. If this modification has led to a shorter total travel distance the current route is updated. The algorithm continues to build on the improved route and repeats the steps. This process is repeated until no more improvements are found or until pre-specified number of iterations is complete. 3-opt analysis involves deleting 3 connections (or edges) in a network (or tour), to create 3 sub-tours. Then the 7 different ways of reconnecting the network are analysed to find the optimum one. This process is then repeated for a different set of 3 connections, until all possible combinations have been tried in a network.
 
   ### Time Complexity: O(N^3)
-  
+ | Number of Nodes | Brute Force Runtime | Backtracking Runtime | 2-opt Runtime |  | 3-opt Runtime |
+| ----------------------|:------------------:|:-----------------------:|:-----------------------:|-----------------------:|
+| 5 | 0 ms | 0 ms | 0ms | 151 ms |
+| 6 | 1 ms | 2 ms | 0 ms | 690 ms |
+| 7 | 17 ms | 12 ms | 0 ms | 1183 ms |
+| 8 | 96 ms | 52 ms | 1 ms | 2050 ms |
+| 9 | 857 ms | 906 ms | 2 ms | 3124 ms |
+
   
 
 ## 10. Find Nearby 
