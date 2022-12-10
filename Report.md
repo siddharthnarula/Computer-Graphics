@@ -25,7 +25,6 @@
 - Dynamic Map UI 
 
 <p align="center"><img src="Photos/Main_Screen.png" alt="Trojan" width="500" /></p>
----
 
 ## The Data Structure
 
@@ -55,4 +54,11 @@ public:
 };
 ```
 
+## Menu
+We have implemented Menu as the Static and Dynamic UI
+Here is the image for Static UI
+<p align="center"><img src="Photos/1.png" width="500" /></p>
+Here is the image for Dynamic UI
+<p align="center"><img src="Photos/Screenshot 2022-12-09 at 7.10.05 PM.png" width="500" /></p>
 
+## 1. Autocomplete The Location Name
