@@ -211,34 +211,70 @@ location_names = {"Ralphs", "Chick-fil-A", "KFC"}. dependencies = {{"Ralphs","KF
 
 Output: Ralphs->Chick-fil-A->KFC
 
+| Input Locations | Topologically Sorted Output |
+| ----------------------|------------------:|
+| Cardinal gardens, Coffee Bean1, CVS | Cardinal gardens Coffee Bean1 CVS |
+| Ralphs, Chick-fil-A, KFC | Ralphs KFC Chick-fil-A |
+| Target KFC Chick-fil-A | Target Chick-fil-A KFC |
+| Ralphs Target KFC Chick-fil-A | Ralphs Target Chick-fil-A KFC |
+| Ralphs Target KFC Chase | Ralphs Target Chase KFC |
+| Ralphs KFC Chase Chick-fil-A | Chick-fil-A Ralphs Chase KFC |
+| Ralphs Target Chase Chick-fil-A | Chick-fil-A Ralphs  Target Chase Target |
+| Ralphs Target Chase Crosswalk | Crosswalk Target Chase Target |
+
+
 ## 9. The Traveling Trojan Problem (AKA Traveling Salesman!)
 
 The main purpose of this is to return the shortest path between N locations when each location is visited only once.
 
-- Brute Force Algorithm:
+- ## Brute Force Algorithm:
   Consider a start node as 1st location, Generate all (n-1)! paths permutations of the locations and calculate the cost of every permutation, keep track of minimum cost for the path. Return the path with minimum cost.
 
-### Time Complexity: O(N!)
+  ### Time Complexity: O(N!)
 
-- BackTracking Algorithm: 
+- ## BackTracking Algorithm: 
 Consider node 0 as the starting and ending point. Start traversing from the source to its adjacent nodes in DFS manner and calculate the cost of every step and minimum cost as well. Return the permutation with minimum cost.
 
-### Time Complexity: O(N!)
+  ### Time Complexity: O(N!)
 
-- 2-opt Algorithm:
+- ## 2-opt Algorithm:
 
 Take 2 edges from the route, reconnect these edges with each other and calculate new travel distance. If this modification has led to a shorter total travel distance the current, route is updated. The algorithm continues to build on the improved route and repeats the steps. This process is repeated until no more improvements are found or until a pre-specified number of iterations is completed.
 
-### Time Complexity: O(N^2)
+  ### Time Complexity: O(N^2)
 
-- 3-opt Algorithm:
+- ## 3-opt Algorithm:
 Take 3 edges from the route, reconnect these edges with each other and calculate new travel distance. If this modification has led to a shorter total travel distance the current route is updated. The algorithm continues to build on the improved route and repeats the steps. This process is repeated until no more improvements are found or until pre-specified number of iterations is complete. 3-opt analysis involves deleting 3 connections (or edges) in a network (or tour), to create 3 sub-tours. Then the 7 different ways of reconnecting the network are analysed to find the optimum one. This process is then repeated for a different set of 3 connections, until all possible combinations have been tried in a network.
 
-### Time Complexity: O(N^3)
+  ### Time Complexity: O(N^3)
+
+## 10. Find Nearby 
+
+```cpp
+std::vector<std::string> TrojanMap::FindNearby(std::string attributesName, std::string name, double r, int k);
+```
+It returns k locations that are part of the input category within the radius of r of given input location. In this case, the inputs that are present are checked within the data points, if a data point with the same attribute has distance to the input location less than radius r. We save it in a heap, then return it using the heap.
+
+### Time complexity is O(Nodes^2)
+
+Example:
+
+Input:
 
 
 
+## 11. Find the Shortest Path to Visit All locations
 
+```cpp
+std::vector<std::string> TrojanMap::TrojanPath(std::vector<std::string> &location_names)
+```
+It returns the shortest path to visit all the given input locations, where input locations can be entered as a csv file.
+
+### Time complexity is O(Nodes^2)
+
+Example:
+
+Input:
 
 
 
